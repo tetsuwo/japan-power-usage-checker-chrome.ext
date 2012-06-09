@@ -1,20 +1,20 @@
 {
-   "background_page": "background.html",
-   "browser_action": {
-      "default_icon": "img/meter_10.png",
-      "popup": "popup.html"
-   },
-   "default_locale": "ja",
-   "description": "__MSG_ext_description__",
-   "icons": {
-      "128": "img/128.png",
-      "16": "img/16.png",
-      "48": "img/48.png",
-      "64": "img/64.png"
-   },
-   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQSPloqHN3gaGXGjFYUaRuUmnqXP4uznKK5XPJHZ3VOLrk/F4lnpOxbA5VsSdk5IAzqoUXjXW4srkMlRc2QNVy3Gl8yQKshXcBL5CDccZIhIvoqzHd+7j6aZ7PjAcjH28gCfl+LfPwvtVy+O8pxzTCWs1YtT6pkzrgGsFbfuZFTQIDAQAB",
-   "name": "__MSG_ext_name__",
-   "permissions": [ "http://api.gosetsuden.jp/*" ],
-   "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "2.0.2"
+  "name": "__MSG_ext_name__",
+  "description": "__MSG_ext_description__",
+  "default_locale": "ja",
+  "background_page": "background.html",
+  "browser_action": {
+    "default_icon": "images/meter_10.png",
+    "popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/16.png",
+    "48": "images/48.png",
+    "64": "images/64.png",
+    "128": "images/128.png"
+  },
+  "permissions": [
+    "http://api.gosetsuden.jp/*"
+  ],
+  "version": "2.0.3"
 }

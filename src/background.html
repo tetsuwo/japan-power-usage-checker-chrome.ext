@@ -2,9 +2,9 @@
 <script src="js/japan-power-usage.js"></script>
 <script>
 window.onload = function() {
-	JapanPowerUsage.run(true);
-    var timerId = setInterval(function() {
-		JapanPowerUsage.run(false);
-	}, 300000);
+    JapanPowerUsage.run(true);
+    setInterval(function() {
+      JapanPowerUsage.run(false);
+    }, 300000);
 };
 </script>

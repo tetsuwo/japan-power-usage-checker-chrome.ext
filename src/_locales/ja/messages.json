@@ -1,62 +1,62 @@
 {
-   "caution": {
-      "message": "\u203B\u30C4\u30FC\u30EB\u30D0\u30FC\u306E\u30D1\u30FC\u30BB\u30F3\u30C8\u306F\u7D045\u5206\u306B1\u56DE\u66F4\u65B0\u3055\u308C\u307E\u3059\u3002"
-   },
-   "chubu": {
-      "message": "\u4E2D\u90E8\u96FB\u529B"
-   },
-   "chubu_url": {
-      "message": "http://denki-yoho.chuden.jp/"
-   },
-   "electricity_forecast": {
-      "message": "\u3067\u3093\u304D\u4E88\u5831"
-   },
-   "ext_description": {
-      "message": "\u6771\u4EAC\u96FB\u529B(TEPCO), \u6771\u5317\u96FB\u529B, \u95A2\u897F\u96FB\u529B, \u4E5D\u5DDE\u96FB\u529B, \u4E2D\u90E8\u96FB\u529B\u306E\u96FB\u529B\u4F7F\u7528\u91CF\u3092\u8868\u793A\u3059\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002"
-   },
-   "ext_name": {
-      "message": "\u5168\u56FD\u306E\u96FB\u529B\u4F7F\u7528\u91CF\u30C1\u30A7\u30C3\u30AB\u30FC"
-   },
-   "kansai": {
-      "message": "\u95A2\u897F\u96FB\u529B"
-   },
-   "kansai_url": {
-      "message": "http://www.kepco.co.jp/setsuden/graph/"
-   },
-   "kyushu": {
-      "message": "\u4E5D\u5DDE\u96FB\u529B"
-   },
-   "kyushu_url": {
-      "message": "http://www.kyuden.co.jp/power_usages/pc.html"
-   },
-   "title": {
-      "message": "\u306E\u96FB\u529B\u4F7F\u7528\u72B6\u6CC1"
-   },
-   "tohoku": {
-      "message": "\u6771\u5317\u96FB\u529B"
-   },
-   "tohoku_url": {
-      "message": "http://setsuden.tohoku-epco.co.jp/graph.html"
-   },
-   "tokyo": {
-      "message": "\u6771\u4EAC\u96FB\u529B"
-   },
-   "tokyo_url": {
-      "message": "http://www.tepco.co.jp/forecast/"
-   },
-   "usage": {
-      "message": "\u4F7F\u7528\u91CF"
-   },
-   "usage_updated": {
-      "message": "\u6700\u7D42\u66F4\u65B0\u65E5\u6642\uFF1A"
-   },
-   "usage_updated_format": {
-      "message": "Y/m/d H\u6642\u9803"
-   },
-   "userate": {
-      "message": "\u4F7F\u7528\u7387"
-   },
-   "yahoo_japan_info": {
-      "message": "\u7BC0\u96FB\u60C5\u5831"
-   }
+  "caution": {
+    "message": "\u203B\u30C4\u30FC\u30EB\u30D0\u30FC\u306E\u30D1\u30FC\u30BB\u30F3\u30C8\u306F\u7D045\u5206\u306B1\u56DE\u66F4\u65B0\u3055\u308C\u307E\u3059\u3002"
+  },
+  "chubu": {
+    "message": "\u4E2D\u90E8\u96FB\u529B"
+  },
+  "chubu_url": {
+    "message": "http://denki-yoho.chuden.jp/"
+  },
+  "electricity_forecast": {
+    "message": "\u3067\u3093\u304D\u4E88\u5831"
+  },
+  "ext_description": {
+    "message": "\u6771\u4EAC\u96FB\u529B(TEPCO), \u6771\u5317\u96FB\u529B, \u95A2\u897F\u96FB\u529B, \u4E5D\u5DDE\u96FB\u529B, \u4E2D\u90E8\u96FB\u529B\u306E\u96FB\u529B\u4F7F\u7528\u91CF\u3092\u8868\u793A\u3059\u308B\u3053\u3068\u304C\u3067\u304D\u307E\u3059\u3002"
+  },
+  "ext_name": {
+    "message": "\u5168\u56FD\u306E\u96FB\u529B\u4F7F\u7528\u91CF\u30C1\u30A7\u30C3\u30AB\u30FC"
+  },
+  "kansai": {
+    "message": "\u95A2\u897F\u96FB\u529B"
+  },
+  "kansai_url": {
+    "message": "http://www.kepco.co.jp/setsuden/graph/"
+  },
+  "kyushu": {
+    "message": "\u4E5D\u5DDE\u96FB\u529B"
+  },
+  "kyushu_url": {
+    "message": "http://www.kyuden.co.jp/power_usages/pc.html"
+  },
+  "title": {
+    "message": "\u306E\u96FB\u529B\u4F7F\u7528\u72B6\u6CC1"
+  },
+  "tohoku": {
+    "message": "\u6771\u5317\u96FB\u529B"
+  },
+  "tohoku_url": {
+    "message": "http://setsuden.tohoku-epco.co.jp/graph.html"
+  },
+  "tokyo": {
+    "message": "\u6771\u4EAC\u96FB\u529B"
+  },
+  "tokyo_url": {
+    "message": "http://www.tepco.co.jp/forecast/"
+  },
+  "usage": {
+    "message": "\u4F7F\u7528\u91CF"
+  },
+  "usage_updated": {
+    "message": "\u6700\u7D42\u66F4\u65B0\u65E5\u6642\uFF1A"
+  },
+  "usage_updated_format": {
+    "message": "Y/m/d H\u6642\u9803"
+  },
+  "userate": {
+    "message": "\u4F7F\u7528\u7387"
+  },
+  "yahoo_japan_info": {
+    "message": "\u7BC0\u96FB\u60C5\u5831"
+  }
 }
