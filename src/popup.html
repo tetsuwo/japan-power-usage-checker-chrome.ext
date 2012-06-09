@@ -2,25 +2,32 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>TEPCO - Power Usage</title>
+	<title>Japan Power Usage</title>
 	<link rel="stylesheet" href="css/style.css" />
 	<script src="js/common.js"></script>
-	<script src="js/tepco-power-usage.js"></script>
+	<script src="js/japan-power-usage.js"></script>
 	<script src="js/i18n.js"></script>
 </head>
-<body>
+<body style="width:200px;">
 
-<div class="box clearfix" style="width:370px;">
-	<div class="fl">
-		<b i18n="title" style="font-size:13px; margin-top:3px;">東京電力の電力使用状況</b>
-	</div>
-	<div class="fr">
-		<div id="saving"></div>
-	</div>
-</div>
+<b id="error" style="color:#d00;"></b>
 
-<div class="box clearfix">
-	<div class="fl" style="width:205px;">
+<div id="info" style="display:none;">
+	<div class="box clearfix">
+		<b style="font-size:13px; margin-top:3px;"><span id="epco-name" i18n="epco-name">東京電力</span><span i18n="title">の電力使用状況</span></b>
+	</div>
+	<div class="box data-info clearfix">
+		<div class="fl" style="width:63%;">
+			<b><span i18n="usage">使用量</span></b>
+			<div class="data-usage"><span id="data-usage"></span>kW</div>
+			<div class="data-capacity"><span id="data-capacity"></span>kW</div>
+		</div>
+		<div class="fr" style="width:35%;">
+			<b><span i18n="userate">使用率</span></b>
+			<div class="data-userate"><span id="data-userate"></span>%</div>
+		</div>
+	</div>
+	<div class="graph-wrapper">
 		<div class="graph">
 			<div class="graph-hide" id="graph-hide" style="width:0%;"></div>
 			<div class="graph-bar"></div>
@@ -28,56 +35,115 @@
 		</div>
 		<img class="graph-scale" src="img/scale.png" />
 	</div>
-	<div class="fr clearfix data-info" style="width:150px;">
-		<div class="fl" style="width:63%;">
-			<b><span i18n="usage">使用量</span></b>
-			<div class="data-usage"><span id="data-usage"></span><span i18n="man">万</span>kW</div>
-			<div class="data-capacity"><span id="data-capacity"></span><span i18n="man">万</span>kW</div>
-		</div>
-		<div class="fr" style="width:35%;">
-			<b><span i18n="userate">使用率</span></b>
-			<div class="data-userate"><span id="data-userate"></span>%</div>
+	<div class="box clearfix">
+		<div class="fr note">
+			<span i18n="usage_updated">--</span><span id="data-usage_updated"></span>
 		</div>
 	</div>
+	<div>
+		<span class="note" i18n="caution"></span>
+	</div>
+	<div id="link"><hr />
+		<a id="link1" href="" target="_blank" i18n="electricity_forecast"></a> |
+		<a id="link2" href="" target="_blank" i18n="yahoo_japan_info"></a>
+	</div>
+</div>
+<div id="setting" style="display:none;">
+	<select id="epco">
+		<option value="">------------</option>
+		<option value="tokyo" i18n="tokyo"></option>
+		<option value="tohoku" i18n="tohoku"></option>
+		<option value="chubu" i18n="chubu"></option>
+		<option value="kansai" i18n="kansai"></option>
+		<option value="kyushu" i18n="kyushu"></option>
+	</select>
+	<input type="button" id="save" value="決定" />
 </div>
 
-<div class="box">
-	<span class="note" i18n="power_usage_chart_by">--</span>
-</div>
+<hr />
 
-<div>
-	<span class="note" i18n="caution"></span>
+<div id="controller">
+	<button id="btn-info" onclick="togglePage('info')">電力使用量</button>
+	<button id="btn-setting" onclick="togglePage('setting')">設定</button>
 </div>
 
 <script>
-i18n();
-if (localStorage.usageinfo)
-{
-	var usageinfo = JSON.parse(localStorage.usageinfo);
 
-	document.getElementById('graph-hide').style.width = (100 - parseInt(usageinfo.result)) + '%';
+function DOMId(id) {
+	return document.getElementById(id);
+}
 
-	document.getElementById('data-usage').innerHTML = usageinfo.usage.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
-	document.getElementById('data-capacity').innerHTML = usageinfo.capacity.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
-	document.getElementById('data-userate').innerHTML = usageinfo.result;
-
-	with (document.getElementById('saving'))
-	{
-		if (usageinfo.saving)
-		{
-			innerText = chrome.i18n.getMessage('planned_blackouts_on');
-			style.backgroundColor = '#CC0204';
-			style.display = 'block';
-		}
-		else
-		{
-			innerText = chrome.i18n.getMessage('planned_blackouts_off');
-			style.backgroundColor = '#7CDA3C';
-			style.display = 'block';
-		}
+function togglePage(page) {
+	switch (page) {
+		case 'info':
+			region = JSON.parse(localStorage.region);
+			update();
+			DOMId('epco-name').innerHTML = chrome.i18n.getMessage(region);
+			DOMId('info').style.display = 'block';
+			DOMId('setting').style.display = 'none';
+			DOMId('btn-info').disabled = true;
+			DOMId('btn-setting').disabled = false;
+			break;
+		case 'setting':
+			region = JSON.parse(localStorage.region);
+			for (var i = 0; i < DOMId('epco').options.length; i++) {
+				if (DOMId('epco').options[i].value === region) {
+					DOMId('epco').options[i].selected = true;
+					break;
+				}
+			}
+			DOMId('info').style.display = 'none';
+			DOMId('setting').style.display = 'block';
+			DOMId('btn-info').disabled = false;
+			DOMId('btn-setting').disabled = true;
+			break;
 	}
 }
-</script>
 
+function update() {
+	var usageinfo = JSON.parse(localStorage.usageinfo);
+
+	DOMId('graph-hide').style.width = (100 - parseInt(usageinfo.result)) + '%';
+	DOMId('data-usage').innerHTML = usageinfo.instant.usage.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
+	DOMId('data-capacity').innerHTML = usageinfo.peak.usage.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
+	DOMId('data-userate').innerHTML = usageinfo.result;
+
+	var lastupdated = new Date(new Date(usageinfo.instant.timestamp).getTime());
+	var t = {Y:lastupdated.getFullYear(), m:lastupdated.getMonth() + 1, d:lastupdated.getDate(), H:lastupdated.getHours()};
+	var tmp = chrome.i18n.getMessage('usage_updated_format').replace('Y', t.Y).replace('m', t.m).replace('d', t.d).replace('H', t.H);
+	DOMId('data-usage_updated').innerHTML = tmp;
+
+	DOMId('link1').setAttribute('href', chrome.i18n.getMessage(region + '_url'));
+	DOMId('link2').setAttribute('href', 'http://setsuden.yahoo.co.jp/' + region + '/');
+	DOMId('link').style.display = 'block';
+}
+
+DOMId('save').onclick = function() {
+	if (!DOMId('epco').value) {
+		DOMId('error').innerHTML = 'Please select!';
+		return false;
+	}
+	DOMId('error').innerHTML = '';
+	localStorage.region = JSON.stringify(DOMId('epco').value);
+	JapanPowerUsage.run(true);
+};
+
+i18n();
+
+if (localStorage.region) {
+	var region = JSON.parse(localStorage.region);
+	togglePage('info');
+} else {
+	var region = 'tokyo';
+	localStorage.region = JSON.stringify(region);
+	togglePage('setting');
+	JapanPowerUsage.run(true);
+}
+
+if (localStorage.usageinfo) {
+	update();
+}
+
+</script>
 </body>
 </html>

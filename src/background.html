@@ -1,10 +1,10 @@
 <script src="js/common.js"></script>
-<script src="js/tepco-power-usage.js"></script>
+<script src="js/japan-power-usage.js"></script>
 <script>
-window.onload = function(){
-	TEPCOPowerUsage.run(true);
-    var timerId = setInterval(function(){
-		TEPCOPowerUsage.run(false);
-	}, 600000);
+window.onload = function() {
+	JapanPowerUsage.run(true);
+    var timerId = setInterval(function() {
+		JapanPowerUsage.run(false);
+	}, 300000);
 };
 </script>

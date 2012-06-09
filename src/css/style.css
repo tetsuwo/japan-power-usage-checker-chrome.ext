@@ -1,3 +1,158 @@
-@import url('reset.css');
-@import url('base.css');
-@import url('fixed.css');
+/**
+ * html5doctor.com Reset Stylesheet
+ * v1.6.1
+ * Last Updated: 2010-09-17
+ * Author: Richard Clark - http://richclarkdesign.com
+ * Twitter: @rich_clark
+ */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+body{line-height:1;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+nav ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+a{font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;}
+input,select{vertical-align:middle;}
+
+/* -- FIXED CLASSES-- */
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.fl {float:left;}
+.fr {float:right;}
+.show {display:block;}
+.inline {display:inline;}
+.hide {display:none;}
+
+body {
+	padding:10px;
+	font-size:12px;
+	font-family:'ƒqƒ‰ƒMƒmŠpƒS Pro W3','Hiragino Kaku Gothic Pro',Meiryo,Helvetica,Arial,Verdana,sans-serif;
+}
+
+a { color: #333; text-decoration: none; }
+
+.note { text-align: right; 	font-size: 90%; }
+.note, .note a { color: #666; }
+
+.box { margin-bottom: 1em; }
+
+#saving {
+	width:150px;
+	border-radius:6px;
+	padding:5px;
+	background-color:#CC0204;
+	color:#fff;
+	display:none;
+	font-size:90%;
+	font-weight:bold;
+	text-align:center;
+}
+
+.graph-wrapper { margin-bottom: .5em; }
+.graph {
+	margin-top:1.3em;
+	width:201px;
+	height:20px;
+	position:relative;
+	/*border:1px solid #000;*/
+}
+	.graph-frame {
+		display:block;
+		position:absolute;
+		top:0;
+		left:0;
+		width:201px;
+		height:20px;
+		z-index:10;
+	}
+		.graph-frame li {
+			display:block;
+			float:left;
+			width:40px;
+			height:20px;
+			border-right:1px solid #fff;
+		}
+		.graph-frame li:nth-child(1) {}
+		.graph-frame li:nth-child(2) { width: 39px; }
+		.graph-frame li:nth-child(3) { width: 39px; }
+		.graph-frame li:nth-child(4) { width: 39px; }
+		.graph-frame li:nth-child(5) { border-right: 0; }
+
+
+.graph-bar {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:20px;
+	z-index:5;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(0.40, #7CDA3C),
+		color-stop(0.40, #ffcc00),
+		color-stop(0.80, #ffcc00),
+		color-stop(0.80, #CC0204),
+		color-stop(1.00, #CC0204)
+	);
+}
+
+.graph-hide {
+	display:block;
+	position:absolute;
+	top:0;
+	right:0;
+	height:20px;
+	z-index:6;
+	background-color:#fff;
+}
+
+.graph-scale {
+	border-top:1px solid #000;
+	width:201px;
+	height:15px;
+}
+
+
+.data-info {
+	border-radius:6px;
+	padding:5px;
+	background-color:#CC0204;
+	color:#fff;
+	display:block;
+	font-weight:bold;
+	font-size:11px;
+	text-align:center;
+}
+
+.data-info b {
+	display:block;
+	margin-bottom:4px;
+}
+
+.data-usage {
+	padding-bottom:2px;
+	border-bottom:1px solid #fff;
+}
+
+.data-capacity {
+	padding-top:2px;
+}
+
+.data-userate {
+	padding-top:6px;
+	font-size:15px;
+}

@@ -1,8 +1,8 @@
 /**
- * TEPCO - Power Usage Checker
- * Copyright (C) Tetsuwo Oishi All Rights Reserved.
+ * Japan Power Usage Checker
+ * Copyright (C) Tetsuwo OISHI All Rights Reserved.
  *
- * @author Tetsuwo Oishi <tetsuwo.oishi@gmail.com>
+ * @author Tetsuwo OISHI <tetsuwo.oishi@gmail.com>
  * @createdAt 2011/03/24
  * @updatedAt 2011/03/25
  */

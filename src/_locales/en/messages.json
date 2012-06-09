@@ -1,38 +1,62 @@
 {
-    "ext_name": {
-        "message": "TEPCO - Power Usage Checker"
-    },
-    "ext_description": {
-        "message": "This extension displays the power usage of TEPCO."
-    },
-    "planned_blackouts_on": {
-        "message": "Planned Blackouts - ON"
-    },
-    "planned_blackouts_off": {
-        "message": "Planned Blackouts - OFF"
-    },
-    "title": {
-        "message": "TEPCO - Power Usage"
-    },
-    "usage": {
-        "message": "Usage"
-    },
-    "userate": {
-        "message": "Use rate"
-    },
-    "man": {
-        "message": " 10-t "
-    },
-    "power_usage_chart_by": {
-        "message": "(Presented by <a href='http://www.tepco.co.jp.cache.yimg.jp/en/forecast/html/index-e.html' target='_blank'>TEPCO</a>)"
-    },
-    "informal_api": {
-        "message": "<a href='http://tepco-usage-api.appspot.com/' target='_blank'>TEPCO's electricity supply situation - Informal API</a>"
-    },
-    "informal_api_by": {
-        "message": "(Presented by <a href='http://twitter.com/ssci' target='_blank'>ssci</a>)"
-    },
-    "caution": {
-        "message": "Percent on the toolbar is updated once every 10 minutes."
-    }
+   "caution": {
+      "message": "Percent on the toolbar is updated once every about 5 minutes."
+   },
+   "chubu": {
+      "message": "Chubu EPCO"
+   },
+   "chubu_url": {
+      "message": "http://denki-yoho.chuden.jp/"
+   },
+   "electricity_forecast": {
+      "message": "Electricity Forecast"
+   },
+   "ext_description": {
+      "message": "This extension displays the power usage of TEPCO, Tohoku EPCO, Kansai EPCO, Kyushu EPCO and Chubu EPCO."
+   },
+   "ext_name": {
+      "message": "JAPAN - Power Usage Checker"
+   },
+   "kansai": {
+      "message": "Kansai EPCO"
+   },
+   "kansai_url": {
+      "message": "http://www.kepco.co.jp/setsuden/graph/"
+   },
+   "kyushu": {
+      "message": "Kyushu EPCO"
+   },
+   "kyushu_url": {
+      "message": "http://www.kyuden.co.jp/power_usages/pc.html"
+   },
+   "title": {
+      "message": " - Power Usage"
+   },
+   "tohoku": {
+      "message": "Tohoku EPCO"
+   },
+   "tohoku_url": {
+      "message": "http://setsuden.tohoku-epco.co.jp/graph.html"
+   },
+   "tokyo": {
+      "message": "Tokyo EPCO"
+   },
+   "tokyo_url": {
+      "message": "http://www.tepco.co.jp/forecast/"
+   },
+   "usage": {
+      "message": "Usage"
+   },
+   "usage_updated": {
+      "message": "Last updated at "
+   },
+   "usage_updated_format": {
+      "message": "Y/m/d H"
+   },
+   "userate": {
+      "message": "Use rate"
+   },
+   "yahoo_japan_info": {
+      "message": "Power Saving Information"
+   }
 }
