@@ -7,7 +7,7 @@ JapanPowerUsage = new function() {
     function indicate() {
         data.ratio = (data.instant.usage * 100) / data.peak.usage;
         data.result = Math.round(data.ratio);
-        toolbar.setIcon({ path: 'img/meter_'+ String(Math.ceil(data.result/10)) +'.png' });
+        toolbar.setIcon({ path: 'images/meter_'+ String(Math.ceil(data.result/10)) +'.png' });
         toolbar.setBadgeText({ text: String(data.result) +'%' });
 		localStorage.usageinfo = JSON.stringify(data);
     }
