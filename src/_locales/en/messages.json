@@ -1,0 +1,38 @@
+{
+    "ext_name": {
+        "message": "TEPCO - Power Usage Checker"
+    },
+    "ext_description": {
+        "message": "This extension displays the power usage of TEPCO."
+    },
+    "planned_blackouts_on": {
+        "message": "Planned Blackouts - ON"
+    },
+    "planned_blackouts_off": {
+        "message": "Planned Blackouts - OFF"
+    },
+    "title": {
+        "message": "TEPCO - Power Usage"
+    },
+    "usage": {
+        "message": "Usage"
+    },
+    "userate": {
+        "message": "Use rate"
+    },
+    "man": {
+        "message": " 10-t "
+    },
+    "power_usage_chart_by": {
+        "message": "(Presented by <a href='http://www.tepco.co.jp.cache.yimg.jp/en/forecast/html/index-e.html' target='_blank'>TEPCO</a>)"
+    },
+    "informal_api": {
+        "message": "<a href='http://tepco-usage-api.appspot.com/' target='_blank'>TEPCO's electricity supply situation - Informal API</a>"
+    },
+    "informal_api_by": {
+        "message": "(Presented by <a href='http://twitter.com/ssci' target='_blank'>ssci</a>)"
+    },
+    "caution": {
+        "message": "Percent on the toolbar is updated once every 10 minutes."
+    }
+}

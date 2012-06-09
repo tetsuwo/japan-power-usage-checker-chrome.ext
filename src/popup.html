@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>TEPCO - Power Usage</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/common.js"></script>
+	<script src="js/tepco-power-usage.js"></script>
+	<script src="js/i18n.js"></script>
+</head>
+<body>
+
+<div class="box clearfix" style="width:370px;">
+	<div class="fl">
+		<b i18n="title" style="font-size:13px; margin-top:3px;">東京電力の電力使用状況</b>
+	</div>
+	<div class="fr">
+		<div id="saving"></div>
+	</div>
+</div>
+
+<div class="box clearfix">
+	<div class="fl" style="width:205px;">
+		<div class="graph">
+			<div class="graph-hide" id="graph-hide" style="width:0%;"></div>
+			<div class="graph-bar"></div>
+			<ul class="graph-frame clearfix"><li></li><li></li><li></li><li></li><li></li></ul>
+		</div>
+		<img class="graph-scale" src="img/scale.png" />
+	</div>
+	<div class="fr clearfix data-info" style="width:150px;">
+		<div class="fl" style="width:63%;">
+			<b><span i18n="usage">使用量</span></b>
+			<div class="data-usage"><span id="data-usage"></span><span i18n="man">万</span>kW</div>
+			<div class="data-capacity"><span id="data-capacity"></span><span i18n="man">万</span>kW</div>
+		</div>
+		<div class="fr" style="width:35%;">
+			<b><span i18n="userate">使用率</span></b>
+			<div class="data-userate"><span id="data-userate"></span>%</div>
+		</div>
+	</div>
+</div>
+
+<div class="box">
+	<span class="note" i18n="power_usage_chart_by">--</span>
+</div>
+
+<div>
+	<span class="note" i18n="caution"></span>
+</div>
+
+<script>
+i18n();
+if (localStorage.usageinfo)
+{
+	var usageinfo = JSON.parse(localStorage.usageinfo);
+
+	document.getElementById('graph-hide').style.width = (100 - parseInt(usageinfo.result)) + '%';
+
+	document.getElementById('data-usage').innerHTML = usageinfo.usage.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
+	document.getElementById('data-capacity').innerHTML = usageinfo.capacity.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
+	document.getElementById('data-userate').innerHTML = usageinfo.result;
+
+	with (document.getElementById('saving'))
+	{
+		if (usageinfo.saving)
+		{
+			innerText = chrome.i18n.getMessage('planned_blackouts_on');
+			style.backgroundColor = '#CC0204';
+			style.display = 'block';
+		}
+		else
+		{
+			innerText = chrome.i18n.getMessage('planned_blackouts_off');
+			style.backgroundColor = '#7CDA3C';
+			style.display = 'block';
+		}
+	}
+}
+</script>
+
+</body>
+</html>

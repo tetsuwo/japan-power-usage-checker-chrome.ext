@@ -1,0 +1,38 @@
+{
+    "ext_name": {
+        "message": "東京電力 - 電力使用量チェッカー"
+    },
+    "ext_description": {
+        "message": "東京電力(TEPCO)の電力使用量を表示します。"
+    },
+    "planned_blackouts_on": {
+        "message": "計画停電 - 実施中"
+    },
+    "planned_blackouts_off": {
+        "message": "計画停電 - 未実施"
+    },
+    "title": {
+        "message": "東京電力の電力使用状況"
+    },
+    "usage": {
+        "message": "使用量"
+    },
+    "userate": {
+        "message": "使用率"
+    },
+    "man": {
+        "message": "万"
+    },
+    "power_usage_chart_by": {
+        "message": "(提供：<a href='http://www.tepco.co.jp.cache.yimg.jp/forecast/index-j.html' target='_blank'>東京電力</a>様)"
+    },
+    "informal_api": {
+        "message": "<a href='http://tepco-usage-api.appspot.com/' target='_blank'>東京電力電力供給状況API</a>"
+    },
+    "informal_api_by": {
+        "message": "(提供：<a href='http://twitter.com/ssci' target='_blank'>ssci</a>様)"
+    },
+    "caution": {
+        "message": "※ツールバーのパーセントは10分に一回更新されます。"
+    }
+}
