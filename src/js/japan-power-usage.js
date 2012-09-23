@@ -1,5 +1,4 @@
 JapanPowerUsage = new function() {
-
     var api = 'http://api.gosetsuden.jp';
     var data = { peak: {}, instant: {} };
     var toolbar = chrome.browserAction;

@@ -44,6 +44,30 @@
   "tokyo_url": {
     "message": "http://www.tepco.co.jp/forecast/"
   },
+  "hokuriku": {
+    "message": "Hokuriku EPCO"
+  },
+  "hokuriku_url": {
+    "message": "http://www.setsuden-rikuden.jp/"
+  },
+  "shikoku": {
+    "message": "Shikoku EPCO"
+  },
+  "shikoku_url": {
+    "message": "http://www.yonden.co.jp/denkiyoho/index.html"
+  },
+  "chugoku": {
+    "message": "Chugoku EPCO"
+  },
+  "chugoku_url": {
+    "message": "http://www.energia.co.jp/jukyuu/index.html"
+  },
+  "hokkaido": {
+    "message": "Hokkaido EPCO"
+  },
+  "hokkaido_url": {
+    "message": "http://denkiyoho.hepco.co.jp/forecast.html"
+  },
   "usage": {
     "message": "Usage"
   },

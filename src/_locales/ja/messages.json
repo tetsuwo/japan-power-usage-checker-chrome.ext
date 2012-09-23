@@ -44,6 +44,30 @@
   "tokyo_url": {
     "message": "http://www.tepco.co.jp/forecast/"
   },
+  "hokuriku": {
+    "message": "\u5317\u9678\u96fb\u529b"
+  },
+  "hokuriku_url": {
+    "message": "http://www.setsuden-rikuden.jp/"
+  },
+  "shikoku": {
+    "message": "\u56db\u56fd\u96fb\u529b"
+  },
+  "shikoku_url": {
+    "message": "http://www.yonden.co.jp/denkiyoho/index.html"
+  },
+  "chugoku": {
+    "message": "\u4e2d\u56fd\u96fb\u529b"
+  },
+  "chugoku_url": {
+    "message": "http://www.energia.co.jp/jukyuu/index.html"
+  },
+  "hokkaido": {
+    "message": "\u5317\u6d77\u9053\u96fb\u529b"
+  },
+  "hokkaido_url": {
+    "message": "http://denkiyoho.hepco.co.jp/forecast.html"
+  },
   "usage": {
     "message": "\u4F7F\u7528\u91CF"
   },

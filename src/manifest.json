@@ -2,10 +2,12 @@
   "name": "__MSG_ext_name__",
   "description": "__MSG_ext_description__",
   "default_locale": "ja",
-  "background_page": "background.html",
+  "background": {
+    "page": "background.html"
+  },
   "browser_action": {
     "default_icon": "images/meter_10.png",
-    "popup": "popup.html"
+    "default_popup": "popup.html"
   },
   "icons": {
     "16": "images/16.png",
@@ -14,7 +16,10 @@
     "128": "images/128.png"
   },
   "permissions": [
-    "http://api.gosetsuden.jp/*"
+    "http://api.gosetsuden.jp/"
   ],
-  "version": "2.1.0"
+  "version": "2.2.1",
+  "manifest_version": 2,
+  "content_security_policy":
+    "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com https://api.gosetsuden.jp; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com; object-src 'self'"
 }

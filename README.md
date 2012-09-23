@@ -31,8 +31,8 @@ http://tepco-usage-api.appspot.com/
 
 
 
-AUTHOR:
--------
+AUTHOR
+------
 
 Tetsuwo OISHI - 
 tetsuwo.oishi@gmail.com / 

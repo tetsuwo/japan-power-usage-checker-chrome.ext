@@ -1,0 +1,50 @@
+
+body {
+    padding: 2em 0;
+    margin: 0 auto;
+    width: 600px;
+    background-color: #111;
+    overflow: hidden;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, Helvetica, Arial, Verdana, sans-serif;
+}
+
+h1 { font-size: 14px; font-weight: bold; margin: 0 0 30px; }
+
+#chart {
+    width: 600px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+#info { text-align: right; font-size: 11px; color: #777; }
+#info b { color: #fff; }
+
+/* ANIMATION */
+@-webkit-keyframes loading-animation {
+      0% { -webkit-transform: scale(1.2); opacity: 1; }
+    100% { -webkit-transform: scale(0.7); opacity: 0.5; }
+}
+#nowloading { display: none; width: 140px; margin: 40px auto; tetxt-align: center; }
+    #nowloading div {
+	background-color: #444;
+	border: 2px solid #777;
+	height: 20px;
+	margin-left: 5px;
+	width: 10px;
+	-webkit-animation-name: loading-animation;
+	-webkit-animation-duration: .6s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: linear;
+	-webkit-transform: scale(0.7);
+	opacity: 0.5;
+	display: inline-block;
+    }
+    #nowloading .box-1 { -webkit-animation-delay: .05s; }
+    #nowloading .box-2 { -webkit-animation-delay: .1s; }
+    #nowloading .box-3 { -webkit-animation-delay: .15s; }
+    #nowloading .box-4 { -webkit-animation-delay: .2s; }
+    #nowloading .box-5 { -webkit-animation-delay: .25s; }
+    #nowloading .box-6 { -webkit-animation-delay: .3s; }
+
