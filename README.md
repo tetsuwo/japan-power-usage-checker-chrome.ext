@@ -15,8 +15,12 @@ JAPAN - Power Usage Checker Chrome Extension
 - 東京電力
 - 東北電力
 - 関西電力
-- 中部電力
 - 九州電力
+- 中部電力
+- 北陸電力
+- 中国電力
+- 四国電力
+- 北海道電力
 
 東京電力電力供給状況API：
 http://api.gosetsuden.jp/
