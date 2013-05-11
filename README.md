@@ -3,7 +3,8 @@ JAPAN - Power Usage Checker Chrome Extension
 
 < [Chrome Webstore](https://chrome.google.com/webstore/detail/hclgegipaehbigmbhdpfapmjadbaldib) >
 
-東北地方太平洋沖地震の影響により、電気の供給が不足しています。
+東京電力（TEPCO）, 東北電力, 関西電力, 九州電力, 中部電力, 北海道電力の電力使用量を表示することができます。  
+東北地方太平洋沖地震の影響により、電気の供給が不足しています。  
 この拡張機能で現在の電力の使用状況を確認し、節電に努めていただければ幸いです。
 
 ツールバーには選択した電力会社の電力使用率を表示します。

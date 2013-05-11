@@ -18,7 +18,7 @@
   "permissions": [
     "http://setsuden.yahooapis.jp/"
   ],
-  "version": "2.3.1",
+  "version": "2.3.2",
   "manifest_version": 2,
   "content_security_policy":
     "script-src 'self' https://ssl.google-analytics.com https://platform.twitter.com https://apis.google.com; frame-src https://plusone.google.com https://www.facebook.com https://platform.twitter.com; object-src 'self'"

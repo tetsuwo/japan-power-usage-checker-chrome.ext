@@ -12,7 +12,7 @@
     "message": "Electricity Forecast"
   },
   "ext_description": {
-    "message": "This extension displays the power usage of TEPCO, Tohoku EPCO, Kansai EPCO, Kyushu EPCO and Chubu EPCO."
+    "message": "This extension displays the power usage of Tokyo EPCO, Tohoku EPCO, Kansai EPCO, Kyushu EPCO, Chubu EPCO, and Hokkaido EPCO."
   },
   "ext_name": {
     "message": "JAPAN - Power Usage Checker"
