@@ -66,9 +66,9 @@ DOMId('btn-setting').onclick = function() {
     togglePage('setting');
 };
 
-DOMId('btn-transition').onclick = function() {
-    window.open('transition.html');
-};
+//DOMId('btn-transition').onclick = function() {
+//    window.open('transition.html');
+//};
 
 i18n();
 

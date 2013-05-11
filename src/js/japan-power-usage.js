@@ -1,5 +1,5 @@
 JapanPowerUsage = new function() {
-    var api = 'http://api.gosetsuden.jp';
+    var api = 'http://setsuden.yahooapis.jp';
     var data = { peak: {}, instant: {} };
     var toolbar = chrome.browserAction;
 
@@ -8,27 +8,40 @@ JapanPowerUsage = new function() {
         data.result = Math.round(data.ratio);
         toolbar.setIcon({ path: 'images/meter_'+ String(Math.ceil(data.result/10)) +'.png' });
         toolbar.setBadgeText({ text: String(data.result) +'%' });
-		localStorage.usageinfo = JSON.stringify(data);
+        localStorage.usageinfo = JSON.stringify(data);
+    }
+
+    function serialize(param, prefix) {
+        var query = [];
+        for(var p in param) {
+            var k = prefix ? prefix + '[' + p + ']' : p, v = param[p];
+            query.push(
+                typeof v == 'object' ?
+                    this.serialize(v, k) :
+                    encodeURIComponent(k) + '=' + encodeURIComponent(v)
+            );
+        }
+        return query.join('&');
     }
 
     function get() {
-		var region = JSON.parse(localStorage.region);
+        var region = JSON.parse(localStorage.region);
+
+        var param = {};
+        param.appid = 'dj0zaiZpPW0xdDdMOFp1MDRudCZkPVlXazljMEYwV2xrNU5EZ21jR285TUEtLSZzPWNvbnN1bWVyc2VjcmV0Jng9Yjk-';
+        param.area = region;
+        param.output = 'json';
 
         var req = new XMLHttpRequest();
-        req.open('GET', api + '/peak/' + region + '/supply/today', true);
+        req.open('GET', api + '/v1/Setsuden/latestPowerUsage?' + serialize(param), true);
         req.onreadystatechange = function() {
             if (req.readyState === 4) {
-                data.peak = JSON.parse(req.responseText)[0];
-
-		        var req2 = new XMLHttpRequest();
-		        req2.open('GET', api + '/usage/' + region + '/instant/latest', true);
-		        req2.onreadystatechange = function() {
-		            if (req2.readyState === 4) {
-		                data.instant = JSON.parse(req2.responseText)[0];
-		                indicate();
-		            }
-		        }
-		        req2.send(null);
+                var res = JSON.parse(req.responseText);
+                if (res.ElectricPowerUsage) {
+                    data.peak.usage = res.ElectricPowerUsage.Capacity.$;
+                    data.instant.usage = res.ElectricPowerUsage.Usage.$;
+                    indicate();
+                }
             }
         }
         req.send(null);
@@ -39,14 +52,14 @@ JapanPowerUsage = new function() {
     };
 
     this.run = function(init) {
-		if (init) {
-	        toolbar.setBadgeBackgroundColor({ color: [66, 66, 66, 255] });
-	        toolbar.setBadgeText({ text: '-- %' });
-	    }
+        if (init) {
+            toolbar.setBadgeBackgroundColor({ color: [66, 66, 66, 255] });
+            toolbar.setBadgeText({ text: '-- %' });
+        }
         get();
     };
 
     this.getData = function() {
-		return data;
+        return data;
     };
 };
