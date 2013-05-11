@@ -1,7 +1,11 @@
 JapanPowerUsage = new function() {
-    var api = 'http://setsuden.yahooapis.jp';
-    var data = { peak: {}, instant: {} };
     var toolbar = chrome.browserAction;
+    var api = 'http://setsuden.yahooapis.jp';
+    var data = {
+        peak: {},
+        instant: {},
+        updated: { date: null, hour: null }
+    };
 
     function indicate() {
         data.ratio = (data.instant.usage * 100) / data.peak.usage;
@@ -40,6 +44,8 @@ JapanPowerUsage = new function() {
                 if (res.ElectricPowerUsage) {
                     data.peak.usage = res.ElectricPowerUsage.Capacity.$;
                     data.instant.usage = res.ElectricPowerUsage.Usage.$;
+                    data.updated.date = res.ElectricPowerUsage.Date;
+                    data.updated.hour = res.ElectricPowerUsage.Hour;
                     indicate();
                 }
             }

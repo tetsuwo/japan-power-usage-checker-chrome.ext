@@ -38,8 +38,14 @@ function update() {
     DOMId('data-capacity').innerHTML = usageinfo.peak.usage.toString().replace(/([0-9]+?)(?=(?:[0-9]{3})+$)/g, '$1,');
     DOMId('data-userate').innerHTML = usageinfo.result;
 
-    var lastupdated = new Date(new Date(usageinfo.instant.timestamp).getTime());
-    var t = {Y:lastupdated.getFullYear(), m:lastupdated.getMonth() + 1, d:lastupdated.getDate(), H:lastupdated.getHours()};
+    var explodeDate = usageinfo.updated.date.split('-');
+    console.log(explodeDate);
+    var t = {
+        Y: explodeDate[0],
+        m: explodeDate[1],
+        d: explodeDate[2],
+        H: usageinfo.updated.hour
+    };
     var tmp = chrome.i18n.getMessage('usage_updated_format').replace('Y', t.Y).replace('m', t.m).replace('d', t.d).replace('H', t.H);
     DOMId('data-usage_updated').innerHTML = tmp;
 
