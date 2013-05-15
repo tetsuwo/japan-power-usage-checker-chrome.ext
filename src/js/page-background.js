@@ -3,5 +3,5 @@ window.onload = function() {
 
     window.setInterval(function() {
         JapanPowerUsage.run(false);
-    }, 300000);
+    }, 900000);
 };
